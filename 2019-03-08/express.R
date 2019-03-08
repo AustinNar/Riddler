@@ -1,3 +1,22 @@
+# This is a way of recursively finding "inventory numbers", which are numbers 
+# describe that themselves (see https://fivethirtyeight.com/features/how-many-numbers-contain-the-numbers-of-their-numbers/),
+# in Riddler Express section. We will provide a list of numerals to be tallied,
+# and the function will build the list of tallies from the largest numeral to
+# the smallest, weeding out impossible tally options along the way wherever it
+# can. A few key insights to speed things up is that
+#  - Outside of the case "22", there arent enough digits in the number for the
+#     last numeral to be tallied more than once. If the largest numeral is n,
+#     there are at most n tallies in the number. If n is tallied twice, that
+#     means n itself must be a tally for some other numeral, and that numeral
+#     thus appears n times, n-1 of which are tallies. All in all we have that 
+#     n itself is a tally atleast once, and the number it tallies is a tally 
+#     n-1 times, which takes up all n tallies without room for any of the other
+#     numbers to be appear.
+#  - Before we continue our recursion to build the list, we can throw out any
+#     any numeral which has already appeared as many times as its tally. This
+#     speed boost becomes greater the deeper we get into the recursion, which
+#     is very helpful.
+
 
 # We will use this to check base case of a completed tally
 inventory_validate <- function(tally, numerals){
@@ -73,7 +92,8 @@ N <- 9
 inventory_numbers <- unlist(lapply(1:(2^N-1),function(i){
   #print(paste0(i, ' / ', 2^N-1))
   t1 <- Sys.time()
-  numerals <- (1:N)[intToBits(i)[1:N] > 0]
+  nu
+  merals <- (1:N)[intToBits(i)[1:N] > 0]
   val <- inventory_number(c(), numerals)
   if(!all(is.na(val))){
     if(is.list(val))
@@ -86,7 +106,7 @@ inventory_numbers <- unlist(lapply(1:(2^N-1),function(i){
   return(val)
 }))
 
-# Filter NA and reorder
+# Filter out NA and reorder
 inventory_numbers <- inventory_numbers[!is.na(inventory_numbers)]
 inventory_numbers <- inventory_numbers[order(as.numeric(inventory_numbers))]
 
