@@ -47,8 +47,11 @@ inventory_number <- function(tally, numerals){
     # the last digit must be a 1 (a matter of the number of digits available).
     # Otherwise, we check over all digits in the numerals in which we have not
     # yet used them as many times as their tally.
-    if(length(tally) == 0 & length(numerals) > 1 & 1 %in% numerals){
-      tally <- c(1)
+    if(length(tally) == 0 & length(numerals) > 1){
+      if(1 %in% numerals)
+        tally <- c(1)
+      else
+        return(NA)
     }
     numerals_left <- c()
     tallies_left <- length(numerals) - length(tally)
