@@ -7,4 +7,4 @@ I will create a new subdirectory named the date of the Riddler post, as well as 
 "dev_{date}" for that specific riddle.
  
  ## Further Reading
- I may also write in more detail about a given weeks solution at www.austinnar.com/blog
+ I may also write in more detail about a given week's solution at www.austinnar.com/blog
