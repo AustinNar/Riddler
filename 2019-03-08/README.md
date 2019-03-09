@@ -17,7 +17,7 @@ This week I chose to tackle the Riddler Express.
 
 
 ## My Approach
-Everything can be found in express.R
+All code can be found in [express.R](./express.R)
 
 Something about this problem just smelled like recursiont to me, so I decided to
 take that exact approach in solving this problem. I treated the number as two
@@ -60,5 +60,5 @@ integers between 1 and 9.
 
 ## The Result
 In total, 59 of these *inventory numbers* can be found, which are listed in increasing 
-order in *inventory_numbers.txt*.
+order in [inventory_numbers.txt](./inventory_numbers.txt).
 
