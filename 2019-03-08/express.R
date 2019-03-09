@@ -92,8 +92,7 @@ N <- 9
 inventory_numbers <- unlist(lapply(1:(2^N-1),function(i){
   #print(paste0(i, ' / ', 2^N-1))
   t1 <- Sys.time()
-  nu
-  merals <- (1:N)[intToBits(i)[1:N] > 0]
+  numerals <- (1:N)[intToBits(i)[1:N] > 0]
   val <- inventory_number(c(), numerals)
   if(!all(is.na(val))){
     if(is.list(val))
