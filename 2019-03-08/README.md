@@ -1,7 +1,9 @@
 # How Many Numbers Contain the Numbers of their Numbers
 
+Blog Post: https://www.austinnar.com/blog/2019/3/8/riddler1
+
 ## This Week's Riddle
-This week I chose to tackle the Riddler Express.
+This week I chose to tackle the Riddler Express. 
 
 > From Daz Voss, numbers of numbers with numbers of their numbers:
 > 
